@@ -1,25 +1,41 @@
-import React from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
-import { View, Text } from "react-native";
-// // import All from '../screens/All';
-// import Business from '../screens/Business';
-// import HealthScreen from '../screens/Health';
-// import SportsScreen from '../screens/Sports';
-// import TechScreen from '../screens/Tech';
-const Tab = createBottomTabNavigator();
-
-export default function App() {
-  return (
-    // <NavigationContainer>
-    //   <Tab.Navigator>
-    //     <Tab.Screen name="All" component={All} />
-    //     <Tab.Screen name="Business" component={Business} />
-    //     <Tab.Screen name="Health" component={HealthScreen} />
-    //     <Tab.Screen name="Sports" component={SportsScreen} />
-    //     <Tab.Screen name="Tech" component={TechScreen} />
-    //   </Tab.Navigator>
-    // </NavigationContainer>
-    <View></View>
-  );
-} 
+import React, { useEffect, useState } from 'react'
+import { View, Text } from 'react-native';
+import { NativeBaseProvider, FlatList, ScrollView, Divider, Image, Spinner } from 'native-base';
+import { services } from '../services';
+export default function All() {
+    const [newsData, setNewsData] = useState([])
+    useEffect(() => {
+        services('general')
+            .then(data => {
+                setNewsData(data)
+            })
+            .catch(error => {
+                alert(error)
+            })
+    }, [])
+    return (
+        <NativeBaseProvider>
+            <ScrollView height={850}>
+                <FlatList
+                    data={newsData}
+                    renderItem={({ item }) => (
+                        <View>
+                            <View>
+                                <Text>
+                                    {item.title}
+                                </Text>
+                                <Text>
+                                    {item.publishedAt}
+                                </Text>
+                                <Text>
+                                    {item.description}
+                                </Text>
+                            </View>
+                        </View>
+                    )}
+                    keyExtractor={(item) => item.id}
+                />
+            </ScrollView>
+        </NativeBaseProvider>
+    )
+}

@@ -1,13 +1,16 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
-import { Icon } from 'react-native-elements'
+import { Icon } from 'react-native-elements';
 import All from './screens/All';
 import Business from './screens/Business';
 import HealthScreen from './screens/Health';
 import SportsScreen from './screens/Sports';
 import TechScreen from './screens/Tech';
 const Tab = createBottomTabNavigator();
+export const API_KEY = `8f54604e1be747f2bf1a2316adce9c4c`;
+export const endpoint = `https://newsapi.org/v2/top-headlines`;
+export const country = 'in'
 
 export default function App() {
   return (
