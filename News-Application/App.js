@@ -10,7 +10,7 @@ import TechScreen from './screens/Tech';
 const Tab = createBottomTabNavigator();
 export const API_KEY = `8f54604e1be747f2bf1a2316adce9c4c`;
 export const endpoint = `https://newsapi.org/v2/top-headlines`;
-export const country = 'in'
+export const country = 'us'
 
 export default function App() {
   return (
