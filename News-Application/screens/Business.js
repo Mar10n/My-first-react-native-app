@@ -11,15 +11,6 @@ const Tab = createBottomTabNavigator();
 
 export default function Business() {
   return (
-    // <NavigationContainer>
-    //   <Tab.Navigator>
-    //     <Tab.Screen name="All" component={All} />
-    //     <Tab.Screen name="Business" component={Business} />
-    //     <Tab.Screen name="Health" component={HealthScreen} />
-    //     <Tab.Screen name="Sports" component={SportsScreen} />
-    //     <Tab.Screen name="Tech" component={TechScreen} />
-    //   </Tab.Navigator>
-    // </NavigationContainer>
-    <View><Text>Business</Text></View>
+    <View></View>
   );
 } 

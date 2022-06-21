@@ -20,6 +20,6 @@ export default function App() {
     //     <Tab.Screen name="Tech" component={TechScreen} />
     //   </Tab.Navigator>
     // </NavigationContainer>
-    <View><Text>Hej</Text></View>
+    <View></View>
   );
 } 
