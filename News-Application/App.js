@@ -2,6 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
+import All from './screens/All';
+import Business from './screens/Business';
+import HealthScreen from './screens/Health';
+import SportsScreen from './screens/Sports';
+import TechScreen from './screens/Tech';
 const Tab = createBottomTabNavigator();
 
 function MyTabs() {
